@@ -1,5 +1,6 @@
 package com.covidhms.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.covidhms.model.User;
 import com.covidhms.service.RegistrationService;
+
 
 @RestController
 public class RegistrationController {
@@ -45,4 +47,7 @@ public class RegistrationController {
 		}
 		return userObj;
 	}
+	
+	
+	
 }
