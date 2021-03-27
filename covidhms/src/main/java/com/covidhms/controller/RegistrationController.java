@@ -46,6 +46,7 @@ public class RegistrationController {
 			throw new Exception("Bad Credentials!");
 		}
 		return userObj;
+		
 	}
 	
 	

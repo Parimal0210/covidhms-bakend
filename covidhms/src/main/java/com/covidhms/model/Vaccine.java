@@ -21,7 +21,6 @@ public class Vaccine {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	
     private Date date;
 	
 	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm a")
