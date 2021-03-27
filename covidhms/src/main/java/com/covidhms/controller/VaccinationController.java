@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.covidhms.model.Vaccine;
+import com.covidhms.service.SmtpMailSender;
 import com.covidhms.service.VaccinationService;
 
 @RestController
@@ -19,6 +20,10 @@ public class VaccinationController {
 
 	@Autowired
 	private VaccinationService service;
+	
+	@Autowired
+	private SmtpMailSender smtpMailSender;
+	
 	private boolean flag=true;
 	
 	@PostMapping("/vaccination")
@@ -54,9 +59,10 @@ public class VaccinationController {
 	@CrossOrigin(origins ="http://localhost:4200")
 	public String confirmAppointment() throws Exception{
 		System.out.println("In confirm appointment");
-		if(flag)
+		if(flag){
+			smtpMailSender.send("prajwal.makanwar@gmail.com", "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on 1 April 2021 !!");
 			return "Approved !!!";
-		else
+		}else
 			return "Not approved ! Try again !!";
 	}
 }
