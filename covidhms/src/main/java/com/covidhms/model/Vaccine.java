@@ -21,8 +21,7 @@ public class Vaccine {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="^(\\d{2}/\\d{2}/\\d{4})|^(\\d{4}-\\d{2}-\\d{2})")
+
     private Date date;
 	
 	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm a")

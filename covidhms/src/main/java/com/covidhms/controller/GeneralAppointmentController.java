@@ -1,7 +1,14 @@
 package com.covidhms.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +30,29 @@ public class GeneralAppointmentController {
 		GeneralAppointment userObj=null;
 		userObj = service.saveAppointment(appointment);
 		return userObj;
+	}
+	
+	
+	
+	@GetMapping("/pendingappointment")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public List<GeneralAppointment> getAllGeneralAppointment(GeneralAppointment ga){
+		return service.getAllGeneralAppointment();
+	}
+	
+	
+	
+	
+	
+	@DeleteMapping("/deleteappointment/{id}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public ResponseEntity<HttpStatus> deleteAppointmentById(@PathVariable int id){
+		try {
+			this.service.deleteAppointmentById(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	
 }
