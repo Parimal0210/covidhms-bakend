@@ -22,7 +22,6 @@ public class Vaccine {
 	private int id;
 	
 	
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="^(\\d{2}/\\d{2}/\\d{4})|^(\\d{4}-\\d{2}-\\d{2})")
     private Date date;
 	
 	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm a")
@@ -30,6 +29,7 @@ public class Vaccine {
 	
 	private int adultCount;
 	private int childCount;
+	private int patientId;
 	
 	public Vaccine() {
 		super();
@@ -38,13 +38,14 @@ public class Vaccine {
 
 
 
-	public Vaccine(int id, Date date, int adultCount,int childCount) {
+	public Vaccine(int id, Date date, int adultCount,int childCount,int patientId) {
 		super();
 		this.id = id;
 		this.date = date;
 		//this.time = time;
 		this.adultCount = adultCount;
 		this.childCount = childCount;
+		this.patientId = patientId;
 	}
 	
 	
@@ -94,16 +95,25 @@ public class Vaccine {
 	}
 	
 	
+	
 	public int getChildCount() {
 		return childCount;
 	}
-
 
 
 	public void setChildCount(int childCount) {
 		this.childCount = childCount;
 	}
 	
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
 	
 	
 }
