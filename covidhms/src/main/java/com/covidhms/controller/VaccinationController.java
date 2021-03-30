@@ -56,7 +56,7 @@ public class VaccinationController {
 	}
 	
 	@GetMapping("/vaccination")
-	//@CrossOrigin(origins ="http://localhost:4200")
+	@CrossOrigin(origins ="http://localhost:4200")
 	public String confirmAppointment() throws Exception{
 		System.out.println("In confirm appointment");
 		if(flag){
