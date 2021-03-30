@@ -60,7 +60,7 @@ public class VaccinationController {
 	public String confirmAppointment() throws Exception{
 		System.out.println("In confirm appointment");
 		if(flag){
-			smtpMailSender.send("prajwal.makanwar@gmail.com", "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on 1 April 2021 !!");
+			smtpMailSender.send("parimalmshete@gmail.com", "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on 1 April 2021 !!");
 			return "Approved !!!";
 		}else
 			return "Not approved ! Try again !!";
