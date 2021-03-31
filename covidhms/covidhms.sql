@@ -17,10 +17,6 @@ show tables;
 select * from user;
 select * from vaccine;
 show columns from vaccine;
-alter table vaccine drop column time;
-
-alter table vaccine modify column date datetime;
-alter table vaccine modify column time datetime;
 
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'parimal@02';

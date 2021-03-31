@@ -37,7 +37,7 @@ public class VaccinationService {
 		return repo.findByDate(date);
 	}
 	
-	public ResponseEntity<String> confirmationAppointment(Vaccine v,boolean flag) throws Exception {
+	public String confirmationAppointment(Vaccine v,boolean flag) throws Exception {
 		System.out.println("In confirm appointment 2");
 		Date d = v.getDate();
 		int id = v.getPatientId();
@@ -45,9 +45,9 @@ public class VaccinationService {
 		System.out.println("email: "+email);
 		
 		if(flag){
-			smtpMailSender.send(email, "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
-			return ResponseEntity.ok("Approved !!!");
+			smtpMailSender.send("parimalmshete@gmail.com", "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
+			return "Approved !!!";
 		}else
-			return ResponseEntity.ok("Not approved ! Try again !!");
+			return "Not approved ! Try again !!";
 	}
 }
