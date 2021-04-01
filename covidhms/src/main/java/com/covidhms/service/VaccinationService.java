@@ -45,7 +45,7 @@ public class VaccinationService {
 		System.out.println("email: "+email);
 		
 		if(flag){
-			smtpMailSender.send("parimalmshete@gmail.com", "Test mail from Spring", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
+			smtpMailSender.send(email, "Mail for vaccination appointment", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
 			return "Approved !!!";
 		}else
 			return "Not approved ! Try again !!";
