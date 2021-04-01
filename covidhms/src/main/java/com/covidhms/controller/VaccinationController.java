@@ -22,7 +22,7 @@ public class VaccinationController {
 	
 	private boolean flag=true;
 	
-	@PostMapping("/vaccination")
+	@PostMapping("/vaccinationRegister")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public Vaccine registerVaccineAppointment(@RequestBody Vaccine v) throws Exception {
 		
@@ -34,7 +34,8 @@ public class VaccinationController {
 			if(vacdate != null)
 			{
 				flag=false;
-				throw new Exception("Appointment on "+d+" is already exist!");
+				//throw new Exception("Appointment on "+d+" is already exist!");
+				System.out.println("Appointment on "+d+" is already exist!");
 			}
 			/*if(vacdate != null)
 			{
@@ -45,16 +46,17 @@ public class VaccinationController {
 				}
 			}*/
 		}
-		
-		Vaccine vObj=null;
-		vObj = service.saveVaccine(v);
-		return vObj;
+		if(flag) {
+			Vaccine vObj=null;
+			vObj = service.saveVaccine(v);
+			return vObj;
+		}
 	}
 	
 	
 	@CrossOrigin(origins ="http://localhost:4200")
-	@GetMapping("/vaccination/{v}")
-	public String confirmAppointment(@PathVariable Vaccine v) throws Exception{
+	@PostMapping("/vaccination")
+	public String confirmAppointment(@RequestBody Vaccine v) throws Exception{
 		System.out.println("In confirm appointment 1");
 		return service.confirmationAppointment(v,flag);
 	}

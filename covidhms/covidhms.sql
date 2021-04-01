@@ -15,7 +15,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`covidhms` /*!40100 DEFAULT CHARACTER SE
 USE `covidhms`;
 show tables;
 select * from user;
-select * from vaccine;
+select * from vaccine;	
 show columns from vaccine;
 
 
