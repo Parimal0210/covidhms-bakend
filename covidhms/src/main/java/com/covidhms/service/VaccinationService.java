@@ -3,11 +3,13 @@ package com.covidhms.service;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.covidhms.model.GeneralAppointment;
 import com.covidhms.model.User;
 import com.covidhms.model.Vaccine;
 import com.covidhms.repository.RegistrationRepository;
@@ -28,6 +30,14 @@ public class VaccinationService {
 	public Vaccine saveVaccine(Vaccine v) {
 		return repo.save(v);
 	}
+	
+	
+	public List<Vaccine> getAllVaccineAppointment() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+	
+
 	
 	/*public Vaccine fetchUserByDateAndTime(Date date, LocalDateTime time) {
 		return repo.findByDateAndTime(date, time);
