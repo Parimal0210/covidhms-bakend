@@ -5,6 +5,7 @@ import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -33,6 +34,14 @@ public class VaccinationService {
 	public Vaccine saveVaccine(Vaccine v) {
 		return repo.save(v);
 	}
+	
+	
+	public List<Vaccine> getAllVaccineAppointment() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+	
+
 	
 	/*public Vaccine fetchUserByDateAndTime(Date date, LocalDateTime time) {
 		return repo.findByDateAndTime(date, time);

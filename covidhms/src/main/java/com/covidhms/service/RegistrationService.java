@@ -1,5 +1,7 @@
 package com.covidhms.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,12 @@ public class RegistrationService {
 		return repo.findByEmailIdAndPassword(email, password);
 	}
 
+	public List<User> getAllPatient() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+	
+	
 	
 	
 	

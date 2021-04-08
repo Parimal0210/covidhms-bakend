@@ -1,6 +1,7 @@
 package com.covidhms.repository;
 
 import java.sql.Date;
+
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,6 +18,10 @@ public interface VaccinationRepository extends JpaRepository<Vaccine, Integer>{
 	public Vaccine findByDate(Date date);
 	//public Vaccine findByDateAndTime(Date date, LocalDateTime time);
 	
+
 	@Query("FROM Vaccine where patientId = :id")
 	public List<Vaccine> findAllById(@Param("id")int id);
+
+	public List<Vaccine> findAll();
+	
 }
