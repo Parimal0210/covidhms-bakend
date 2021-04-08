@@ -17,24 +17,14 @@ public class GeneralAppointment {
 	private String userName;
 	private String appointmentDate;
 	
-	private String headache;
+	private String dryCough;
 	
 	private String fever;
 	
-	private String cold;
+	private String lossOfTaste;
 	
-	private String bp;
+	private String breath;
 	
-	private String diabetes;
-	
-	private String prescription;
-	
-	private String medicalHistory;
-	
-	private String respiratoryProblems;
-	
-	private String foreignTravelling;
-
 	
 	
 	
@@ -48,23 +38,21 @@ public class GeneralAppointment {
 
 
 
-	public GeneralAppointment(int id, String userName, String appointmentDate, String headache, String fever, String cold,
-			String bp, String diabetes, String prescription, String medicalHistory, String respiratoryProblems,
-			String foreignTravelling) {
+
+
+	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
+			String lossOfTaste, String breath) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.appointmentDate = appointmentDate;
-		this.headache = headache;
+		this.dryCough = dryCough;
 		this.fever = fever;
-		this.cold = cold;
-		this.bp = bp;
-		this.diabetes = diabetes;
-		this.prescription = prescription;
-		this.medicalHistory = medicalHistory;
-		this.respiratoryProblems = respiratoryProblems;
-		this.foreignTravelling = foreignTravelling;
+		this.lossOfTaste = lossOfTaste;
+		this.breath = breath;
 	}
+
+
 
 
 
@@ -78,9 +66,13 @@ public class GeneralAppointment {
 
 
 
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
 
 
 
@@ -94,9 +86,13 @@ public class GeneralAppointment {
 
 
 
+
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+
 
 
 
@@ -110,6 +106,8 @@ public class GeneralAppointment {
 
 
 
+
+
 	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
@@ -118,17 +116,23 @@ public class GeneralAppointment {
 
 
 
-	public String getHeadache() {
-		return headache;
+
+
+	public String getDryCough() {
+		return dryCough;
 	}
 
 
 
 
 
-	public void setHeadache(String headache) {
-		this.headache = headache;
+
+
+	public void setDryCough(String dryCough) {
+		this.dryCough = dryCough;
 	}
+
+
 
 
 
@@ -142,6 +146,8 @@ public class GeneralAppointment {
 
 
 
+
+
 	public void setFever(String fever) {
 		this.fever = fever;
 	}
@@ -150,113 +156,43 @@ public class GeneralAppointment {
 
 
 
-	public String getCold() {
-		return cold;
+
+
+	public String getLossOfTaste() {
+		return lossOfTaste;
 	}
 
 
 
 
 
-	public void setCold(String cold) {
-		this.cold = cold;
+
+
+	public void setLossOfTaste(String lossOfTaste) {
+		this.lossOfTaste = lossOfTaste;
 	}
 
 
 
 
 
-	public String getBp() {
-		return bp;
+
+
+	public String getBreath() {
+		return breath;
 	}
 
 
 
 
 
-	public void setBp(String bp) {
-		this.bp = bp;
+
+
+	public void setBreath(String breath) {
+		this.breath = breath;
 	}
 
 
-
-
-
-	public String getDiabetes() {
-		return diabetes;
-	}
-
-
-
-
-
-	public void setDiabetes(String diabetes) {
-		this.diabetes = diabetes;
-	}
-
-
-
-
-
-	public String getPrescription() {
-		return prescription;
-	}
-
-
-
-
-
-	public void setPrescription(String prescription) {
-		this.prescription = prescription;
-	}
-
-
-
-
-
-	public String getMedicalHistory() {
-		return medicalHistory;
-	}
-
-
-
-
-
-	public void setMedicalHistory(String medicalHistory) {
-		this.medicalHistory = medicalHistory;
-	}
-
-
-
-
-
-	public String getRespiratoryProblems() {
-		return respiratoryProblems;
-	}
-
-
-
-
-
-	public void setRespiratoryProblems(String respiratoryProblems) {
-		this.respiratoryProblems = respiratoryProblems;
-	}
-
-
-
-
-
-	public String getForeignTravelling() {
-		return foreignTravelling;
-	}
-
-
-
-
-
-	public void setForeignTravelling(String foreignTravelling) {
-		this.foreignTravelling = foreignTravelling;
-	}
 
 
 
@@ -265,11 +201,14 @@ public class GeneralAppointment {
 	@Override
 	public String toString() {
 		return "GeneralAppointment [id=" + id + ", userName=" + userName + ", appointmentDate=" + appointmentDate
-				+ ", headache=" + headache + ", fever=" + fever + ", cold=" + cold + ", bp=" + bp + ", diabetes="
-				+ diabetes + ", prescription=" + prescription + ", medicalHistory=" + medicalHistory
-				+ ", respiratoryProblems=" + respiratoryProblems + ", foreignTravelling=" + foreignTravelling + "]";
+				+ ", dryCough=" + dryCough + ", fever=" + fever + ", lossOfTaste=" + lossOfTaste + ", breath=" + breath
+				+ "]";
 	}
+
+
 	
+
+
 	
 	
 	
