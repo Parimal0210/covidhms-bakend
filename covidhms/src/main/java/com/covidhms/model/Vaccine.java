@@ -3,6 +3,7 @@ package com.covidhms.model;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,12 +24,13 @@ public class Vaccine {
 	
     private Date date;
 	
-	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="HH:mm a")
-	//private LocalDateTime time;
+	@JsonFormat(pattern="HH:mm")
+	private LocalTime time;
 	
 	private int adultCount;
 	private int childCount;
 	private int patientId;
+	private String patientName;
 	
 	public Vaccine() {
 		super();
@@ -37,14 +39,15 @@ public class Vaccine {
 
 
 
-	public Vaccine(int id, Date date, int adultCount,int childCount,int patientId) {
+	public Vaccine(int id, Date date,LocalTime time, int adultCount,int childCount,int patientId,String patientName) {
 		super();
 		this.id = id;
 		this.date = date;
-		//this.time = time;
+		this.time = time;
 		this.adultCount = adultCount;
 		this.childCount = childCount;
 		this.patientId = patientId;
+		this.patientName = patientName;
 	}
 	
 	
@@ -72,15 +75,15 @@ public class Vaccine {
 	}
 	
 	
-	/*public LocalDateTime getTime() {
+	public LocalTime getTime() {
 		return time;
 	}
 
 
 
-	public void setTime(LocalDateTime time) {
+	public void setTime(LocalTime time) {
 		this.time = time;
-	}*/
+	}
 	
 	
 	public int getAdultCount() {
@@ -114,5 +117,15 @@ public class Vaccine {
 		this.patientId = patientId;
 	}
 	
+
 	
+	public String getPatientName() {
+		return patientName;
+	}
+
+
+	public void setPatientId(String patientName) {
+		this.patientName = patientName;
+	}
+
 }

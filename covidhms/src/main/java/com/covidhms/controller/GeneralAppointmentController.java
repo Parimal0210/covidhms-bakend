@@ -25,13 +25,20 @@ public class GeneralAppointmentController {
 	@PostMapping("/generalappointment")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public GeneralAppointment registerUser(@RequestBody GeneralAppointment appointment) throws Exception {
-		
-		
+	
 		GeneralAppointment userObj=null;
 		userObj = service.saveAppointment(appointment);
 		return userObj;
 	}
 	
+	@GetMapping("/approveAppointment/{patientId}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public String approveAppointment(@PathVariable int patientId) throws Exception {
+	
+		System.out.println("In app mail pid = "+patientId);
+		service.testAppointmentMail(patientId);
+		return "Good";
+	}
 	
 	
 	@GetMapping("/pendingappointment")
@@ -55,5 +62,11 @@ public class GeneralAppointmentController {
 		}
 	}
 	
+	
+	@GetMapping("/getTestAppointmentInfo/{patientId}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public List<GeneralAppointment> getAllGeneralAppointment(@PathVariable int patientId){
+		return service.getAllGeneralAppointmentOfId(patientId);
+	}
 }
 

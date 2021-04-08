@@ -11,7 +11,7 @@ public class Bill {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+	private int patientId;
 	private String patientName;
 	private String patientDescription;
 	private int totalAmount;
@@ -21,14 +21,23 @@ public class Bill {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bill(int id, String patientName, String patientDescription, int totalAmount) {
+	public Bill(int id,int patientId, String patientName, String patientDescription, int totalAmount) {
 		super();
 		this.id = id;
+		this.patientId = patientId;
 		this.patientName = patientName;
 		this.patientDescription = patientDescription;
 		this.totalAmount = totalAmount;
 	}
 
+	public int getpatientId() {
+		return patientId;
+	}
+
+	public void setpatientId(int patientId) {
+		this.patientId = patientId;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -63,7 +72,7 @@ public class Bill {
 
 	@Override
 	public String toString() {
-		return "Bill [id=" + id + ", patientName=" + patientName + ", patientDescription=" + patientDescription
+		return "Bill [id=" + id + ", patientId="+ patientId +", patientName=" + patientName + ", patientDescription=" + patientDescription
 				+ ", totalAmount=" + totalAmount + "]";
 	}
 	
