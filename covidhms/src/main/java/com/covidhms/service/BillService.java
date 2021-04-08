@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.covidhms.model.Bill;
+import com.covidhms.model.GeneralAppointment;
 import com.covidhms.repository.BillRepository;
 
 @Service
@@ -21,5 +22,11 @@ public class BillService {
 	public List<Bill> getAllBills() {
 		// TODO Auto-generated method stub
 		return repo.findAll();
+	}
+	
+	public List<Bill> getAllInvoiceOfId(int id) {
+		
+		// TODO Auto-generated method stub
+		return repo.findAllById(id);
 	}
 }

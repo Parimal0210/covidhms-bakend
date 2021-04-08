@@ -14,7 +14,10 @@ public class GeneralAppointment {
 	private int id;
 	
 	
+	private int patientId;
+	
 	private String userName;
+	
 	private String appointmentDate;
 	
 	private String headache;
@@ -48,11 +51,12 @@ public class GeneralAppointment {
 
 
 
-	public GeneralAppointment(int id, String userName, String appointmentDate, String headache, String fever, String cold,
+	public GeneralAppointment(int id, int patientId,String userName, String appointmentDate, String headache, String fever, String cold,
 			String bp, String diabetes, String prescription, String medicalHistory, String respiratoryProblems,
 			String foreignTravelling) {
 		super();
 		this.id = id;
+		this.patientId = patientId;
 		this.userName = userName;
 		this.appointmentDate = appointmentDate;
 		this.headache = headache;
@@ -86,6 +90,20 @@ public class GeneralAppointment {
 
 
 
+	public int getPatientId() {
+		return patientId;
+	}
+
+
+
+
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+
+
 	public String getUserName() {
 		return userName;
 	}
@@ -97,9 +115,7 @@ public class GeneralAppointment {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
-
-
+	
 
 
 	public String getAppointmentDate() {
@@ -264,7 +280,7 @@ public class GeneralAppointment {
 
 	@Override
 	public String toString() {
-		return "GeneralAppointment [id=" + id + ", userName=" + userName + ", appointmentDate=" + appointmentDate
+		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", UserName=" + userName + ", appointmentDate=" + appointmentDate
 				+ ", headache=" + headache + ", fever=" + fever + ", cold=" + cold + ", bp=" + bp + ", diabetes="
 				+ diabetes + ", prescription=" + prescription + ", medicalHistory=" + medicalHistory
 				+ ", respiratoryProblems=" + respiratoryProblems + ", foreignTravelling=" + foreignTravelling + "]";
