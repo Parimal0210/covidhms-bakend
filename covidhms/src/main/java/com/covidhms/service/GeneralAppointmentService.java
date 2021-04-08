@@ -56,6 +56,7 @@ public class GeneralAppointmentService {
 		String email = regRepo.findById(patientId).getEmailId();
 		System.out.println("email: "+email);
 		
+		
 		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is scheduled on 1st April 2021 !!");
 	}
 	
