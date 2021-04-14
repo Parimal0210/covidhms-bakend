@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.covidhms.model.Bill;
+import com.covidhms.model.GeneralAppointment;
 import com.covidhms.model.Vaccine;
 
 public interface VaccinationRepository extends JpaRepository<Vaccine, Integer>{
@@ -24,4 +25,5 @@ public interface VaccinationRepository extends JpaRepository<Vaccine, Integer>{
 
 	public List<Vaccine> findAll();
 	
+	public Vaccine deleteVaccineAppointmentById(int id);
 }

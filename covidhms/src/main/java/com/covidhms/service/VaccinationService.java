@@ -46,6 +46,13 @@ public class VaccinationService {
 	/*public Vaccine fetchUserByDateAndTime(Date date, LocalDateTime time) {
 		return repo.findByDateAndTime(date, time);
 	}*/
+	public void deleteVaccineAppointmentById(int id) throws Exception {
+
+		//int patientId = repo.findById(id).getPatientId();		
+		Vaccine entity = repo.getOne(id);
+		repo.delete(entity);
+	}
+
 	
 	public Vaccine fetchUserByDate(Date date) {
 		return repo.findByDate(date);
@@ -74,7 +81,7 @@ public class VaccinationService {
 	    
 	    
 		if(flag){
-			smtpMailSender.send(email, "Mail for vaccination appointment", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
+			smtpMailSender.send(email, "Mail for Vaccination appointment", "Congratulations!!! Your vaccination appointment is scheduled on "+d+" !!");
 			return "Approved !!!";
 		}else
 			return "Not approved ! Try again !!";

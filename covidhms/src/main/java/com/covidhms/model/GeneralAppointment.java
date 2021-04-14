@@ -27,7 +27,7 @@ public class GeneralAppointment {
 	
 	private String breath;
 	
-	
+	private String status;
 	
 
 	public GeneralAppointment() {
@@ -38,8 +38,13 @@ public class GeneralAppointment {
 
 
 
+	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
+			String lossOfTaste, String breath, String status) {
+
+
 	public GeneralAppointment(int id, int patientId, String userName, String appointmentDate, String dryCough,
 			String fever, String lossOfTaste, String breath) {
+
 		super();
 		this.id = id;
 		this.patientId = patientId;
@@ -49,6 +54,7 @@ public class GeneralAppointment {
 		this.fever = fever;
 		this.lossOfTaste = lossOfTaste;
 		this.breath = breath;
+		this.status = status;
 	}
 
 
@@ -164,12 +170,33 @@ public class GeneralAppointment {
 	}
 
 
+	
+	
+	public String getStatus() {
+		return status;
+	}
+
+
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 
 
 	@Override
 	public String toString() {
 		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", userName=" + userName
 				+ ", appointmentDate=" + appointmentDate + ", dryCough=" + dryCough + ", fever=" + fever
+
+				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + ", status=" + status + "]";
+	}
+
+
+
+
 				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + "]";
 	}
 	
@@ -180,6 +207,12 @@ public class GeneralAppointment {
 	
 	
 
+
+
+
+
+	
+	
 
 	
 
