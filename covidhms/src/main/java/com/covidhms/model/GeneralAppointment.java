@@ -13,7 +13,6 @@ public class GeneralAppointment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	
 	private int patientId;
 	
 	private String userName;
@@ -30,8 +29,7 @@ public class GeneralAppointment {
 	
 	private String status;
 	
-	
-	
+
 	public GeneralAppointment() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -39,8 +37,13 @@ public class GeneralAppointment {
 
 
 
+
 	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
 			String lossOfTaste, String breath, String status) {
+
+
+	public GeneralAppointment(int id, int patientId, String userName, String appointmentDate, String dryCough,
+			String fever, String lossOfTaste, String breath) {
 
 		super();
 		this.id = id;
@@ -57,15 +60,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public int getId() {
 		return id;
 	}
-
-
-
 
 
 
@@ -77,12 +74,9 @@ public class GeneralAppointment {
 
 
 
-
-
 	public int getPatientId() {
 		return patientId;
 	}
-
 
 
 
@@ -93,6 +87,7 @@ public class GeneralAppointment {
 
 
 
+
 	public String getUserName() {
 		return userName;
 	}
@@ -100,13 +95,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
 
 
 
@@ -118,15 +109,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public void setAppointmentDate(String appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
-
-
-
 
 
 
@@ -138,15 +123,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public void setDryCough(String dryCough) {
 		this.dryCough = dryCough;
 	}
-
-
-
 
 
 
@@ -158,15 +137,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public void setFever(String fever) {
 		this.fever = fever;
 	}
-
-
-
 
 
 
@@ -178,9 +151,6 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public void setLossOfTaste(String lossOfTaste) {
 		this.lossOfTaste = lossOfTaste;
 	}
@@ -188,15 +158,9 @@ public class GeneralAppointment {
 
 
 
-
-
-
 	public String getBreath() {
 		return breath;
 	}
-
-
-
 
 
 
@@ -215,6 +179,7 @@ public class GeneralAppointment {
 
 
 
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -225,10 +190,22 @@ public class GeneralAppointment {
 	public String toString() {
 		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", userName=" + userName
 				+ ", appointmentDate=" + appointmentDate + ", dryCough=" + dryCough + ", fever=" + fever
+
 				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + ", status=" + status + "]";
 	}
 
 
+
+
+				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
 
 
 

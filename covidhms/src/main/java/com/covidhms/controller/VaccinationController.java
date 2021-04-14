@@ -43,7 +43,9 @@ public class VaccinationController {
 			{
 				flag=false;
 
-				//throw new Exception("Appointment on "+d+" is already exist!");
+
+//				throw new Exception("Appointment on "+d+" is already exist!");
+
 
 				//System.out.println("Appointment on "+d+" is already exist!");
 			}
@@ -70,8 +72,8 @@ public class VaccinationController {
 
 	}
 	
-	@GetMapping("/getVaccineAppointmentInfo/{patientId}")
 	@CrossOrigin(origins ="http://localhost:4200")
+	@GetMapping("/getVaccineAppointmentInfo/{patientId}")
 	public List<Vaccine> getAllVaccineAppointment(@PathVariable int patientId){
 		return service.getAllVaccineAppointmentOfId(patientId);
 	}

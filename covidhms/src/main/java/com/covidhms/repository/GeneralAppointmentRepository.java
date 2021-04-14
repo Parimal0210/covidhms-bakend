@@ -3,6 +3,8 @@ package com.covidhms.repository;
 import java.sql.Date;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -17,14 +19,25 @@ public interface GeneralAppointmentRepository extends JpaRepository<GeneralAppoi
 	@Query("FROM GeneralAppointment where patientId = :id")
 	public List<GeneralAppointment> findAllById(@Param("id")int id);
 	
+
 	@Query("SELECT appointmentDate FROM GeneralAppointment WHERE patientId = :id")
 	public Date getDateByPatientId(@Param("id")int id);
 	
 	public GeneralAppointment getByPatientId(int patientId);
+
+	//@Query("FROM GeneralAppointment where patientId = :id")
+
 	
 	public GeneralAppointment findById(int id);
 	public GeneralAppointment deleteAppointmentById(int id);
-	
+
 	@Query("FROM GeneralAppointment where status = 'Pending'")
 	public List<GeneralAppointment> findAllPending();
+
+	
+	public List<GeneralAppointment> findAllByPatientId(int patientId);
+	public GeneralAppointment findByPatientId(int patientId);	 
+	@Transactional
+	void deleteByPatientId(int patientId);
+
 }
