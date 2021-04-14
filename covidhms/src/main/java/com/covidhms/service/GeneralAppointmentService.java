@@ -37,6 +37,12 @@ public class GeneralAppointmentService {
 		return repo.findAllById(id);
 	}
 	
+	public List<GeneralAppointment> getAllGeneralAppointmentOfPatientId(int patientId) {
+		// TODO Auto-generated method stub
+		return repo.findAllByPatientId(patientId);
+	}
+
+	
 	public void deleteAppointmentById(int id) throws Exception {
 
 		int patientId = repo.findById(id).getPatientId();
@@ -50,13 +56,33 @@ public class GeneralAppointmentService {
 		repo.delete(entity);
 	}
 	
+	
+
+	
+	public void deleteByPatientId(int patientId) throws Exception {
+		repo.deleteByPatientId(patientId);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void testAppointmentMail(int patientId) throws Exception {
 		
 		System.out.println("ID: "+patientId);
 		String email = regRepo.findById(patientId).getEmailId();
 		System.out.println("email: "+email);
 		
-		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is scheduled on 1st April 2021 !!");
+		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is Confirmed you can visit our hospital at any time on Mon-Sat between 10:00 AM To 07:00 PM !!");
 	}
 	
 }
