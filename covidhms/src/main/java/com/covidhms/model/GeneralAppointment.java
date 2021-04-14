@@ -28,7 +28,7 @@ public class GeneralAppointment {
 	
 	private String breath;
 	
-	
+	private String status;
 	
 	
 	
@@ -39,16 +39,8 @@ public class GeneralAppointment {
 
 
 
-
-
-
-	public GeneralAppointment(int id, int patientId,String userName, String appointmentDate, String headache, String fever, String cold,
-			String bp, String diabetes, String prescription, String medicalHistory, String respiratoryProblems,
-			String foreignTravelling) {
-
-
 	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
-			String lossOfTaste, String breath) {
+			String lossOfTaste, String breath, String status) {
 
 		super();
 		this.id = id;
@@ -59,6 +51,7 @@ public class GeneralAppointment {
 		this.fever = fever;
 		this.lossOfTaste = lossOfTaste;
 		this.breath = breath;
+		this.status = status;
 	}
 
 
@@ -213,24 +206,36 @@ public class GeneralAppointment {
 	}
 
 
+	
+	
+	public String getStatus() {
+		return status;
+	}
 
 
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 
 
 	@Override
 	public String toString() {
-
-		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", UserName=" + userName + ", appointmentDate=" + appointmentDate
-				+ ", headache=" + headache + ", fever=" + fever + ", cold=" + cold + ", bp=" + bp + ", diabetes="
-				+ diabetes + ", prescription=" + prescription + ", medicalHistory=" + medicalHistory
-				+ ", respiratoryProblems=" + respiratoryProblems + ", foreignTravelling=" + foreignTravelling + "]";
-
-		return "GeneralAppointment [id=" + id + ", userName=" + userName + ", appointmentDate=" + appointmentDate
-				+ ", dryCough=" + dryCough + ", fever=" + fever + ", lossOfTaste=" + lossOfTaste + ", breath=" + breath
-				+ "]";
+		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", userName=" + userName
+				+ ", appointmentDate=" + appointmentDate + ", dryCough=" + dryCough + ", fever=" + fever
+				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + ", status=" + status + "]";
 	}
 
+
+
+
+
+
+
+	
+	
 
 	
 

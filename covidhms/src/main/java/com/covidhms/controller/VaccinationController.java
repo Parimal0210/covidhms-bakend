@@ -4,8 +4,12 @@ import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,7 +43,7 @@ public class VaccinationController {
 			{
 				flag=false;
 
-				throw new Exception("Appointment on "+d+" is already exist!");
+				//throw new Exception("Appointment on "+d+" is already exist!");
 
 				//System.out.println("Appointment on "+d+" is already exist!");
 			}
@@ -53,10 +57,10 @@ public class VaccinationController {
 			}*/
 		}
 	
+		if(flag) {
 			Vaccine vObj=null;
 			vObj = service.saveVaccine(v);
 			return vObj;
-
 		}else {
 			flag=true;
 			throw new Exception("Appointment on "+d+" is already exist!");
@@ -85,5 +89,17 @@ public class VaccinationController {
 	@GetMapping("/vaccinependingappointments")
 	public List<Vaccine> getAllVaccineAppointment(Vaccine v){
 		return service.getAllVaccineAppointment();
+	}
+	
+	
+	@DeleteMapping("/deletevaccineappointment/{id}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public ResponseEntity<HttpStatus> deleteVaccineAppointmentById(@PathVariable int id){
+		try {
+			this.service.deleteVaccineAppointmentById(id);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 }

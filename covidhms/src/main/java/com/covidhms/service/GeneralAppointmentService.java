@@ -1,5 +1,6 @@
 package com.covidhms.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class GeneralAppointmentService {
 	
 	public List<GeneralAppointment> getAllGeneralAppointment() {
 		// TODO Auto-generated method stub
-		return repo.findAll();
+		return repo.findAllPending();
 	}
 	
 	public List<GeneralAppointment> getAllGeneralAppointmentOfId(int id) {
@@ -43,6 +44,7 @@ public class GeneralAppointmentService {
 		System.out.println("ID: "+patientId);
 		String email = regRepo.findById(patientId).getEmailId();
 		
+		
 		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! As per your response to the questionnaire,\n You don't need to take the Covid-19 Test. Just take the following precautions :\n Keep Social Distancing\n Wear Mask Regularly\n Use Sanitizer !!");
 
 		
@@ -55,9 +57,13 @@ public class GeneralAppointmentService {
 		System.out.println("ID: "+patientId);
 		String email = regRepo.findById(patientId).getEmailId();
 		System.out.println("email: "+email);
+		repo.getByPatientId(patientId).setStatus("Approved");
+		repo.save(repo.getByPatientId(patientId));
+		System.out.println("Status : " +repo.getByPatientId(patientId).getStatus());
+		Date d = repo.getDateByPatientId(patientId);
+		System.out.println("Date: "+d);
 		
-		
-		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is scheduled on 1st April 2021 !!");
+		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is scheduled on "+d+" !!");
 	}
 	
 }

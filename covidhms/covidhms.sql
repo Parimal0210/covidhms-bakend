@@ -15,8 +15,12 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`covidhms` /*!40100 DEFAULT CHARACTER SE
 USE `covidhms`;
 show tables;
 select * from user;
+select * from general_appointment;
 select * from vaccine;	
+select * from bill;
+select * from doctor;
 show columns from vaccine;
+
 
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'parimal@02';
