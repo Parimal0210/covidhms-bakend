@@ -19,8 +19,10 @@ select * from general_appointment;
 select * from vaccine;	
 select * from bill;
 select * from doctor;
+select * from rooms;
+select * from room_management;
 show columns from vaccine;
 
-
+insert into rooms values(105,'Semi-Private','Available');
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'parimal@02';

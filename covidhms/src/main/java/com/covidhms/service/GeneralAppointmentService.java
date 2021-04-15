@@ -92,8 +92,6 @@ public class GeneralAppointmentService {
 
 		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is scheduled on "+d+" !!");
 
-		smtpMailSender.send(email, "Mail for Covid-19 Test appointment","Congratulations!!! Your Covid-19 Test appointment is Confirmed you can visit our hospital at any time on Mon-Sat between 10:00 AM To 07:00 PM !!");
-
 	}
 	
 }
