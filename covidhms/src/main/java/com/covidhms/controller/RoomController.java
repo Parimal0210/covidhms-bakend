@@ -62,6 +62,14 @@ public class RoomController {
 	}
 	
 	
+	@GetMapping("/getRoomStatusInfo")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public List<RoomManagement> getAllRoomStatusInfo() throws Exception {
+		
+		return service.getRoomStatusInfo();
+	}
+	
+	
 	@DeleteMapping("/deleteBed/{id}")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public ResponseEntity<HttpStatus> deleteAppointmentById(@PathVariable int id){

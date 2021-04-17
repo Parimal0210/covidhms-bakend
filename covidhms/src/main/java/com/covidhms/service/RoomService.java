@@ -40,6 +40,10 @@ public class RoomService {
 		return repo.findAll();
 	}
 	
+	public List<RoomManagement> getRoomStatusInfo(){
+		return rmrepo.findAll();
+	}
+	
 	public List<Rooms> getRoomNumbers(String type){
 		return repo.findAllByType(type);
 	}
