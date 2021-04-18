@@ -39,11 +39,7 @@ public class GeneralAppointment {
 
 
 	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
-			String lossOfTaste, String breath, String status) {
-
-
-	public GeneralAppointment(int id, int patientId, String userName, String appointmentDate, String dryCough,
-			String fever, String lossOfTaste, String breath) {
+			String lossOfTaste, String breath, String status, int patientId) {
 
 		super();
 		this.id = id;
@@ -192,12 +188,6 @@ public class GeneralAppointment {
 				+ ", appointmentDate=" + appointmentDate + ", dryCough=" + dryCough + ", fever=" + fever
 
 				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + ", status=" + status + "]";
-	}
-
-
-
-
-				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + "]";
 	}
 	
 	
