@@ -15,6 +15,9 @@ public class Doctor {
 	private String doctorName;
 	private String doctorEmail;
 	private String doctorDegree;
+	private String phoneNumber;
+	private String dob;
+	private String address;
 	private String password;
 	
 	public Doctor() {
@@ -22,12 +25,16 @@ public class Doctor {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Doctor(int id, String doctorName, String doctorEmail, String doctorDegree, String password) {
+	public Doctor(int id, String doctorName, String doctorEmail, String doctorDegree, String phoneNumber, String dob,
+			String address, String password) {
 		super();
 		this.id = id;
 		this.doctorName = doctorName;
 		this.doctorEmail = doctorEmail;
 		this.doctorDegree = doctorDegree;
+		this.phoneNumber = phoneNumber;
+		this.dob = dob;
+		this.address = address;
 		this.password = password;
 	}
 
@@ -63,6 +70,30 @@ public class Doctor {
 		this.doctorDegree = doctorDegree;
 	}
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getPassword() {
 		return password;
 	}
@@ -74,8 +105,11 @@ public class Doctor {
 	@Override
 	public String toString() {
 		return "Doctor [id=" + id + ", doctorName=" + doctorName + ", doctorEmail=" + doctorEmail + ", doctorDegree="
-				+ doctorDegree + ", password=" + password + "]";
+				+ doctorDegree + ", phoneNumber=" + phoneNumber + ", dob=" + dob + ", address=" + address
+				+ ", password=" + password + "]";
 	}
+
+	
 	
 	
 	

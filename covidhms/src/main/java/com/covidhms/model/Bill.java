@@ -14,6 +14,7 @@ public class Bill {
 	private int patientId;
 	private String patientName;
 	private String patientDescription;
+	private String doi;
 	private int totalAmount;
 	
 	public Bill() {
@@ -21,29 +22,30 @@ public class Bill {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Bill(int id,int patientId, String patientName, String patientDescription, int totalAmount) {
+	public Bill(int id, int patientId, String patientName, String patientDescription, String doi, int totalAmount) {
 		super();
 		this.id = id;
 		this.patientId = patientId;
 		this.patientName = patientName;
 		this.patientDescription = patientDescription;
+		this.doi = doi;
 		this.totalAmount = totalAmount;
 	}
 
-	public int getpatientId() {
-		return patientId;
-	}
-
-	public void setpatientId(int patientId) {
-		this.patientId = patientId;
-	}
-	
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
 	}
 
 	public String getPatientName() {
@@ -62,6 +64,14 @@ public class Bill {
 		this.patientDescription = patientDescription;
 	}
 
+	public String getDoi() {
+		return doi;
+	}
+
+	public void setDoi(String doi) {
+		this.doi = doi;
+	}
+
 	public int getTotalAmount() {
 		return totalAmount;
 	}
@@ -72,9 +82,11 @@ public class Bill {
 
 	@Override
 	public String toString() {
-		return "Bill [id=" + id + ", patientId="+ patientId +", patientName=" + patientName + ", patientDescription=" + patientDescription
-				+ ", totalAmount=" + totalAmount + "]";
+		return "Bill [id=" + id + ", patientId=" + patientId + ", patientName=" + patientName + ", patientDescription="
+				+ patientDescription + ", doi=" + doi + ", totalAmount=" + totalAmount + "]";
 	}
+
+	
 	
 	
 	

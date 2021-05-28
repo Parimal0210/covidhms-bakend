@@ -16,6 +16,7 @@ public class RegistrationService {
 	
 	public User saveUser(User user) {
 		return repo.save(user);
+		
 	}
 	
 	public User fetchUserByEmailId(String email) {
