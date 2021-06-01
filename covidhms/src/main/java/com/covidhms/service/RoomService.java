@@ -54,6 +54,14 @@ public class RoomService {
 		repo.delete(entity);
 	}
 	
+	public void dischargePatientRoomNo(int no) throws Exception {
+		
+		int id = rmrepo.findByRoomNo(no).getId();
+		repo.getOne(no).setStatus("Available");
+		RoomManagement entity = rmrepo.getOne(id);
+		rmrepo.delete(entity);
+	}
+	
 	public List<RoomManagement> getAllRoomsOfPatientId(int patientId) {
 		// TODO Auto-generated method stub
 		return rmrepo.findAllById(patientId);

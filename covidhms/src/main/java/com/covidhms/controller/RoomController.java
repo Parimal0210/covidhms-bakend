@@ -82,6 +82,18 @@ public class RoomController {
 	}
 	
 	
+	@DeleteMapping("/dischargePatient/{no}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public ResponseEntity<HttpStatus> dischargePatientByRoomNo(@PathVariable int no){
+		try {
+			this.service.dischargePatientRoomNo(no);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	
 	@GetMapping("/getRoomInfoByPid/{patientId}")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public List<RoomManagement> getAllRoomsByPid(@PathVariable int patientId){
