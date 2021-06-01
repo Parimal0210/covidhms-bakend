@@ -14,4 +14,8 @@ public interface RoomManagementRepository extends JpaRepository<RoomManagement, 
 	public List<RoomManagement> findAllById(@Param("id")int id);
 	
 	public List<RoomManagement> findAll();
+	
+
+	@Query("FROM RoomManagement where roomNo = :no")
+	public RoomManagement findByRoomNo(@Param("no")int no);
 }
