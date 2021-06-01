@@ -52,9 +52,6 @@ public class GeneralAppointmentController {
 	
 	
 	
-	
-	
-	
 	@DeleteMapping("/deleteappointment/{id}")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public ResponseEntity<HttpStatus> deleteAppointmentById(@PathVariable int id){
@@ -81,6 +78,7 @@ public class GeneralAppointmentController {
 	}
 	
 	
+	
 	@GetMapping("/getTestAppointmentInfo/{patientId}")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public List<GeneralAppointment> getAllGeneralAppointment(@PathVariable int patientId){
@@ -89,16 +87,11 @@ public class GeneralAppointmentController {
 	
 	
 
-	
-
 	@GetMapping("/patientidappointment/{patientId}")
 	@CrossOrigin(origins ="http://localhost:4200")
 	public List<GeneralAppointment> getAllGeneralAppointmentOfPatientId(@PathVariable int patientId){
 		return service.getAllGeneralAppointmentOfPatientId(patientId);
 	}
-	
-	
-	
 	
 }
 

@@ -31,18 +31,17 @@ public class RoomController {
 	
 	@PostMapping("/confirmAddRoom")
 	@CrossOrigin(origins ="http://localhost:4200")
-	public String confirmAddNewRoom(@RequestBody Rooms r) throws Exception {
+	public void confirmAddNewRoom(@RequestBody Rooms r) throws Exception {
 		
 		service.addNewRoom(r);
-		return "Room added!!";
 	}
 	
 	@PostMapping("/confirmBed")
 	@CrossOrigin(origins ="http://localhost:4200")
-	public String confirmAddNewRoom(@RequestBody RoomManagement rm) throws Exception {
+	public void confirmAddNewRoom(@RequestBody RoomManagement rm) throws Exception {
 		
 		service.addNewBed(rm);
-		return "Room added!!";
+		
 	}
 	
 	
@@ -99,4 +98,16 @@ public class RoomController {
 	public List<RoomManagement> getAllRoomsByPid(@PathVariable int patientId){
 		return service.getAllRoomsOfPatientId(patientId);
 	}
+	
+	@DeleteMapping("/dischargePatient/{no}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public ResponseEntity<HttpStatus> dischargePatientByRoomNo(@PathVariable int no){
+		try {
+			this.service.dischargePatientRoomNo(no);
+			return new ResponseEntity<>(HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
 }

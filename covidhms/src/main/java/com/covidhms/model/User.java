@@ -14,7 +14,11 @@ public class User {
 	
 	private String emailId;
 	private String userName;
+	private String phoneNumber;
+	private String    dob;
+	private String address;
 	private String password;
+	
 	
 	
 	
@@ -25,13 +29,19 @@ public class User {
 
 
 
-	public User(int id, String emailId, String userName, String password) {
+
+	public User(int id, String emailId, String userName, String phoneNumber, String dob, String address,
+			String password) {
 		super();
 		this.id = id;
 		this.emailId = emailId;
 		this.userName = userName;
+		this.phoneNumber = phoneNumber;
+		this.dob = dob;
+		this.address = address;
 		this.password = password;
 	}
+
 
 
 
@@ -41,9 +51,11 @@ public class User {
 
 
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 
 
 
@@ -53,9 +65,11 @@ public class User {
 
 
 
+
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
+
 
 
 
@@ -65,9 +79,53 @@ public class User {
 
 
 
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
+
+
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
+
+
+	public String getDob() {
+		return dob;
+	}
+
+
+
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 
 
 
@@ -77,16 +135,24 @@ public class User {
 
 
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 
 
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", emailId=" + emailId + ", userName=" + userName + ", password=" + password + "]";
+		return "User [id=" + id + ", emailId=" + emailId + ", userName=" + userName + ", phoneNumber=" + phoneNumber
+				+ ", dob=" + dob + ", address=" + address + ", password=" + password + "]";
 	}
+
+
+
+
+	
 	
 	
 	

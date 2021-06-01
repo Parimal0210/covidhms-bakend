@@ -29,6 +29,7 @@ public class GeneralAppointment {
 	
 	private String status;
 	
+	
 
 	public GeneralAppointment() {
 		super();
@@ -37,10 +38,8 @@ public class GeneralAppointment {
 
 
 
-
-	public GeneralAppointment(int id, String userName, String appointmentDate, String dryCough, String fever,
-			String lossOfTaste, String breath, String status, int patientId) {
-
+	public GeneralAppointment(int id, int patientId, String userName, String appointmentDate, String dryCough,
+			String fever, String lossOfTaste, String breath, String status) {
 		super();
 		this.id = id;
 		this.patientId = patientId;
@@ -55,11 +54,9 @@ public class GeneralAppointment {
 
 
 
-
 	public int getId() {
 		return id;
 	}
-
 
 
 
@@ -69,11 +66,9 @@ public class GeneralAppointment {
 
 
 
-
 	public int getPatientId() {
 		return patientId;
 	}
-
 
 
 
@@ -83,11 +78,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getUserName() {
 		return userName;
 	}
-
 
 
 
@@ -97,11 +90,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getAppointmentDate() {
 		return appointmentDate;
 	}
-
 
 
 
@@ -111,11 +102,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getDryCough() {
 		return dryCough;
 	}
-
 
 
 
@@ -125,11 +114,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getFever() {
 		return fever;
 	}
-
 
 
 
@@ -139,11 +126,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getLossOfTaste() {
 		return lossOfTaste;
 	}
-
 
 
 
@@ -153,11 +138,9 @@ public class GeneralAppointment {
 
 
 
-
 	public String getBreath() {
 		return breath;
 	}
-
 
 
 
@@ -166,13 +149,10 @@ public class GeneralAppointment {
 	}
 
 
-	
-	
+
 	public String getStatus() {
 		return status;
 	}
-
-
 
 
 
@@ -186,27 +166,13 @@ public class GeneralAppointment {
 	public String toString() {
 		return "GeneralAppointment [id=" + id + ", patientId=" + patientId + ", userName=" + userName
 				+ ", appointmentDate=" + appointmentDate + ", dryCough=" + dryCough + ", fever=" + fever
-
 				+ ", lossOfTaste=" + lossOfTaste + ", breath=" + breath + ", status=" + status + "]";
 	}
 	
 	
 	
-	
-	
-	
-	
-
-
-
-
 
 	
-	
-
-	
-
-
 	
 	
 	
