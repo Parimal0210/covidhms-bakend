@@ -23,8 +23,9 @@ select * from rooms;
 select * from room_management;
 show columns from vaccine;
 
-drop table rooms;
-drop table room_management;
+
+
+
 insert into rooms values(105,'Semi-Private','Available');
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'parimal@02';

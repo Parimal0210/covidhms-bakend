@@ -38,16 +38,11 @@ public class VaccinationController {
 		//LocalDateTime t = v.getTime();
 		//System.out.println("Time "+t);
 		if(d != null ) {
-			Vaccine vacdate = service.fetchUserByDate(d);
+			Vaccine vacdate = service.fetchUserByDate(v);
 			if(vacdate != null)
 			{
 				flag=false;
 
-
-//				throw new Exception("Appointment on "+d+" is already exist!");
-
-
-				//System.out.println("Appointment on "+d+" is already exist!");
 			}
 			/*if(vacdate != null)
 			{

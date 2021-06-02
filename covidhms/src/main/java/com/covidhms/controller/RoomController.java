@@ -99,15 +99,5 @@ public class RoomController {
 		return service.getAllRoomsOfPatientId(patientId);
 	}
 	
-	@DeleteMapping("/dischargePatient/{no}")
-	@CrossOrigin(origins ="http://localhost:4200")
-	public ResponseEntity<HttpStatus> dischargePatientByRoomNo(@PathVariable int no){
-		try {
-			this.service.dischargePatientRoomNo(no);
-			return new ResponseEntity<>(HttpStatus.OK);
-		}catch(Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
-
+	
 }

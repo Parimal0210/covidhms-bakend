@@ -36,6 +36,10 @@ public class RegistrationService {
 		return repo.findAll();
 	}
 	
+	public User getPatientById(int id){
+		return repo.findById(id);
+	}
+	
 	
 	
 	

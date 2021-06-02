@@ -26,4 +26,7 @@ public interface VaccinationRepository extends JpaRepository<Vaccine, Integer>{
 	public List<Vaccine> findAll();
 	
 	public Vaccine deleteVaccineAppointmentById(int id);
+	
+	@Query("FROM Vaccine where date = :date AND patientId = :patientId")
+	public Vaccine findByDateOfPatient(Date date,int patientId);
 }

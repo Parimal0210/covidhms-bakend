@@ -67,11 +67,4 @@ public class RoomService {
 		return rmrepo.findAllById(patientId);
 	}
 	
-	public void dischargePatientRoomNo(int no) throws Exception {
-		
-		int id = rmrepo.findByRoomNo(no).getId();
-		repo.getOne(no).setStatus("Available");
-		RoomManagement entity = rmrepo.getOne(id);
-		rmrepo.delete(entity);
-	}
 }

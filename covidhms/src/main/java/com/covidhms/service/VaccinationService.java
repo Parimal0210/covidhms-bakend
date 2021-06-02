@@ -54,8 +54,8 @@ public class VaccinationService {
 	}
 
 	
-	public Vaccine fetchUserByDate(Date date) {
-		return repo.findByDate(date);
+	public Vaccine fetchUserByDate(Vaccine v) {
+		return repo.findByDateOfPatient(v.getDate(),v.getPatientId());
 	}
 	
 	public List<Vaccine> getAllVaccineAppointmentOfId(int id) {

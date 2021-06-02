@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,6 +59,12 @@ public class RegistrationController {
 	@CrossOrigin(origins ="http://localhost:4200")
 	public List<User> getAllPatient(User user){
 		return service.getAllPatient();
+	}
+	
+	@GetMapping("/patientAvailable/{patientId}")
+	@CrossOrigin(origins ="http://localhost:4200")
+	public User getPatient(@PathVariable int patientId){
+		return service.getPatientById(patientId);
 	}
 	
 	
